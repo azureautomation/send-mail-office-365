@@ -1,0 +1,20 @@
+{
+    "Author": "Azure Automation Product Team",
+    "ContentSize": 21926,
+    "ContentUrl": "https://raw.githubusercontent.com/azureautomation/send-mail-office-365/master/SendMailO365.graphrunbook",
+    "DownloadCount": 12862,
+    "Id": "Send-Mail-Office-365-c8679aef",
+    "IsFederated": true,
+    "IsWorkflow": false,
+    "Popularity": 37,
+    "RaterCount": 1,
+    "Rating": 5.0,
+    "ReleaseDate": "2016-5-17T00:00:00",
+    "RunbookKind": 3,
+    "RunbookKindString": "Graphical Powershell",
+    "Summary": "This Graphical PowerShell runbook connects to Office 365 and sends an email. \u00a0You can run this runbook by itself or call it from another runbook as part of a larger workflow.",
+    "Title": "Send Mail Office 365",
+    "UpdatedDate": "2016-7-1T00:00:00",
+    "Url": "https://github.com/azureautomation/send-mail-office-365",
+    "UserTags": "Office 365, Email, GraphicalPS"
+}
