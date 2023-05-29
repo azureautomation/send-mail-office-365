@@ -1,4 +1,4 @@
-﻿Send Mail Office 365
+﻿Send Mail Office 365 via Managed Identity
 ====================
 
 This runbook sends an email through Office 365 Exchange.
@@ -16,6 +16,9 @@ $role = $Msgraph.AppRoles| Where-Object {$_.Value -eq $roleName}
 new-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentityId -PrincipalId $managedIdentityId -ResourceId $msgraph.Id -AppRoleId $role.Id 
 
 3. Import dependencies modules: Microsoft.Graph.Authentication, Microsoft.Graph.Users.Actions
+
+
+![image](https://github.com/c10100/send-mail-office-365/assets/98794426/1df1fe72-e718-4a23-97c2-efe09a6b000d)
 
 
 AUTHOR
