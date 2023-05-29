@@ -1,4 +1,4 @@
-﻿Send Mail Office 365 via Managed Identity
+﻿Send Mail Office 365 via a system Managed Identity
 ====================
 
 This Graphical PowerShell runbook connects to Office 365 and sends an email.  You can run this runbook by itself or call it from another runbook as part of a larger workflow.
@@ -7,9 +7,9 @@ This Graphical PowerShell runbook connects to Office 365 and sends an email.  Y
 ![image](https://github.com/c10100/send-mail-office-365/assets/98794426/1df1fe72-e718-4a23-97c2-efe09a6b000d)
 
 
-REQUIRED
-1. An Automation managed identity is enabled.
-2. Use PowerShell to Admin Consent for managed identity, the following code MUST run in the local machine (None-Runbook) where microsoft.graph module installed:
+**REQUIRED**
+1. A system managed identity is enabled in the Automation Account.
+2. Use PowerShell to Admin Consent for managed identity, the following code MUST run in the local machine (**None Runbook or None automation account**) where microsoft.graph module installed:
 
 
 Connect-MgGraph -Scopes Application.Read.All, AppRoleAssignment.ReadWrite.All, RoleManagement.ReadWrite.Directory
