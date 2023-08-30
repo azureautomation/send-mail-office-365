@@ -4,7 +4,8 @@
 This Graphical PowerShell runbook connects to Office 365 and sends an email.  You can run this runbook by itself or call it from another runbook as part of a larger workflow.
 
 
-![image](https://github.com/c10100/send-mail-office-365/assets/98794426/1df1fe72-e718-4a23-97c2-efe09a6b000d)
+![image](https://github.com/c5245010/send-mail-office-365/assets/98794426/e6fa7906-1cc6-4d46-9e0e-21e41bb0f4c4)
+
 
 
 **REQUIRED**
