@@ -21,7 +21,9 @@ $msgraph = Get-MgServicePrincipal -Filter "AppId eq '00000003-0000-0000-c000-000
 $role = $Msgraph.AppRoles| Where-Object {$_.Value -eq $roleName} 
 new-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentityId -PrincipalId $managedIdentityId -ResourceId $msgraph.Id -AppRoleId $role.Id 
 
+
 <img width="651" alt="image" src="https://github.com/c5245010/send-mail-office-365/assets/98794426/1d32315b-7ac8-4390-9aa1-3516b0fc0744">
+
 
 3. Import dependencies modules: Microsoft.Graph.Authentication, Microsoft.Graph.Users.Actions
 
