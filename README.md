@@ -12,6 +12,7 @@ This Graphical PowerShell runbook connects to Office 365 and sends an email.  Y
 1. A system managed identity is enabled in the Automation Account.
 2. Use PowerShell to Admin Consent for managed identity, the following code MUST run in the local machine (**None Runbook or None automation account**) where microsoft.graph module installed:
 
+Note: This comamnd required Azure AD Global administrator to approve Admin Consent.
 
 Connect-MgGraph -Scopes Application.Read.All, AppRoleAssignment.ReadWrite.All, RoleManagement.ReadWrite.Directory
 $managedIdentityId = "managed identity object id in the AAD"
@@ -20,6 +21,7 @@ $msgraph = Get-MgServicePrincipal -Filter "AppId eq '00000003-0000-0000-c000-000
 $role = $Msgraph.AppRoles| Where-Object {$_.Value -eq $roleName} 
 new-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentityId -PrincipalId $managedIdentityId -ResourceId $msgraph.Id -AppRoleId $role.Id 
 
+<img width="651" alt="image" src="https://github.com/c5245010/send-mail-office-365/assets/98794426/1d32315b-7ac8-4390-9aa1-3516b0fc0744">
 
 3. Import dependencies modules: Microsoft.Graph.Authentication, Microsoft.Graph.Users.Actions
 
@@ -29,7 +31,7 @@ Azure Automation Team
 
 
 LASTEDIT
-2023-5-29
+2023-8-31
 
 
 TechNet gallery is retiring! This script was migrated from TechNet script center to GitHub by Microsoft Azure Automation product group. All the Script Center fields like Rating, RatingCount and DownloadCount have been carried over to Github as-is for the migrated scripts only. Note : The Script Center fields will not be applicable for the new repositories created in Github & hence those fields will not show up for new Github repositories.
