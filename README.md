@@ -1,5 +1,5 @@
-﻿Send Mail Office 365 via a system Managed Identity
-====================
+﻿Send Mail Office 365 via a System Managed Identity
+=
 This Graphical PowerShell runbook connects to Office 365 and sends an email.  You can run this runbook by itself or call it from another runbook as part of a larger workflow.
 ![image](https://github.com/c5245010/send-mail-office-365/assets/98794426/e6fa7906-1cc6-4d46-9e0e-21e41bb0f4c4)
 <br/><br/>
@@ -14,11 +14,10 @@ $managedIdentityId = "managed identity object id in the AAD"
 $roleName = "Mail.Send"
 $msgraph = Get-MgServicePrincipal -Filter "AppId eq '00000003-0000-0000-c000-000000000000'"
 $role = $Msgraph.AppRoles| Where-Object {$_.Value -eq $roleName} 
-new-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentityId -PrincipalId $managedIdentityId -ResourceId $msgraph.Id -AppRoleId $role.Id 
+New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentityId -PrincipalId $managedIdentityId -ResourceId $msgraph.Id -AppRoleId $role.Id 
 ```
 
-<br/><br/>
-Note: This comamnd required Azure AD Global administrator to approve Admin Consent.
+**Note: This comamnd requires Azure AD Global administrator to approve Admin Consent.**
 <img width="651" alt="image" src="https://github.com/c5245010/send-mail-office-365/assets/98794426/1d32315b-7ac8-4390-9aa1-3516b0fc0744">
 <br/><br/>
 
