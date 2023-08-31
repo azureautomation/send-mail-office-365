@@ -12,7 +12,7 @@ This Graphical PowerShell runbook connects to Office 365 and sends an email.  Y
 1. A system managed identity is enabled in the Automation Account.
 2. Use PowerShell to Admin Consent for managed identity, the following code MUST run in the local machine (**None Runbook or None automation account**) where microsoft.graph module installed:
 
-Note: This comamnd required Azure AD Global administrator to approve Admin Consent.
+**Note: This comamnd required Azure AD Global administrator to approve Admin Consent.**
 
 Connect-MgGraph -Scopes Application.Read.All, AppRoleAssignment.ReadWrite.All, RoleManagement.ReadWrite.Directory
 $managedIdentityId = "managed identity object id in the AAD"
