@@ -24,6 +24,10 @@ new-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentityId -
 
 <img width="651" alt="image" src="https://github.com/c5245010/send-mail-office-365/assets/98794426/1d32315b-7ac8-4390-9aa1-3516b0fc0744">
 
+refer to below to find Azure automation managed identity ID in the AAD.
+<img width="687" alt="image" src="https://github.com/c5245010/send-mail-office-365/assets/98794426/36f938bb-0338-4438-9354-70efec97ad77">
+
+
 3. Import dependencies modules: Microsoft.Graph.Authentication, Microsoft.Graph.Users.Actions
 
 
