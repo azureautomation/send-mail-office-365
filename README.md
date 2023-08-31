@@ -2,17 +2,13 @@
 ====================
 
 This Graphical PowerShell runbook connects to Office 365 and sends an email.  You can run this runbook by itself or call it from another runbook as part of a larger workflow.
-
-
 ![image](https://github.com/c5245010/send-mail-office-365/assets/98794426/e6fa7906-1cc6-4d46-9e0e-21e41bb0f4c4)
-
 
 
 **REQUIRED**
 1. A system managed identity is enabled in the Automation Account.
 2. Use PowerShell to Admin Consent for managed identity, the following code MUST run in the local machine (**None Runbook or None automation account**) where microsoft.graph module installed:
 
-**Note: This comamnd required Azure AD Global administrator to approve Admin Consent.**
 
 Connect-MgGraph -Scopes Application.Read.All, AppRoleAssignment.ReadWrite.All, RoleManagement.ReadWrite.Directory
 $managedIdentityId = "managed identity object id in the AAD"
@@ -21,10 +17,12 @@ $msgraph = Get-MgServicePrincipal -Filter "AppId eq '00000003-0000-0000-c000-000
 $role = $Msgraph.AppRoles| Where-Object {$_.Value -eq $roleName} 
 new-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentityId -PrincipalId $managedIdentityId -ResourceId $msgraph.Id -AppRoleId $role.Id 
 
-
 <img width="651" alt="image" src="https://github.com/c5245010/send-mail-office-365/assets/98794426/1d32315b-7ac8-4390-9aa1-3516b0fc0744">
 
-refer to below to find Azure automation managed identity ID in the AAD.
+
+**Note: This comamnd required Azure AD Global administrator to approve Admin Consent.**
+
+Refer to below screenshot to find Azure automation managed identity ID in the AAD.
 <img width="687" alt="image" src="https://github.com/c5245010/send-mail-office-365/assets/98794426/36f938bb-0338-4438-9354-70efec97ad77">
 
 
