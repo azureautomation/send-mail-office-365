@@ -6,7 +6,7 @@ This Graphical PowerShell runbook connects to Office 365 and sends an email.  Y
 
 **REQUIRED**
 1. A system managed identity is enabled in the Automation Account.
-2. Use PowerShell to Admin Consent for managed identity, the following code MUST run in the local machine (**None Runbook or None automation account**) where microsoft.graph module installed:
+2. Use PowerShell to Admin Consent for managed identity, the following code MUST run in the local machine where microsoft.graph module installed:
 
 ```powershell
 Connect-MgGraph -Scopes Application.Read.All, AppRoleAssignment.ReadWrite.All, RoleManagement.ReadWrite.Directory
@@ -22,7 +22,8 @@ New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentityId -
 <br/><br/>
 
 Refer to below screenshot to find Azure automation managed identity ID.
-<img width="517" alt="image" src="https://github.com/c5245010/send-mail-office-365/assets/98794426/d04d6382-24c4-48ec-ad2d-24bfc6b5c6ce">
+![image](https://github.com/c5245010/send-mail-office-365/assets/98794426/b5d1fc96-479a-4a78-a3ee-a61403e0a4e3)
+
 <br/><br/>
 
 3. Import dependencies modules: Microsoft.Graph.Authentication, Microsoft.Graph.Users.Actions in the Azure automation account.
